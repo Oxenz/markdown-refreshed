@@ -4,7 +4,7 @@ Markdown не является заменой HTML. Синтаксис Markdown 
 
 
 # Расмотртим основные конструкции с примерами.
-<a href="#block" id="block">Блок первый</a>    
+<h5 id="block">Блок первый</a>    
 
 <a href='#installation-guide' id='installation-guide' class='anchor' aria-hidden='true'>Installation guide</a>
 
