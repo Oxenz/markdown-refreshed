@@ -1,4 +1,4 @@
-Настоящий документ предназначен для ознакомления пользователя с функциональными возможностями языка разметки Markdown. Markdown – это облегченный язык разметки, который является инструментом преобразования кода в HTML. Главной особенностью данного языка является максимально простой синтаксис, который служит для упрощения написания и чтения кода разметки, что, в свою очередь, позволяет легко его корректировать. Теперь рассмотрим более подробно функции языка разметки Markdown.
+Настоящий обновленный документ предназначен для ознакомления пользователя с функциональными возможностями языка разметки Markdown. Markdown – это облегченный язык разметки, который является инструментом преобразования кода в HTML. Главной особенностью данного языка является максимально простой синтаксис, который служит для упрощения написания и чтения кода разметки, что, в свою очередь, позволяет легко его корректировать. Теперь рассмотрим более подробно функции языка разметки Markdown.
 
 Markdown не является заменой HTML. Синтаксис Markdown достаточно ограничен, и соответствует лишь небольшому подмножеству элементов HTML. 
 
@@ -10,14 +10,14 @@ Markdown не является заменой HTML. Синтаксис Markdown 
 2. [Перенос строки](#enter-line)
 3. [Разделители](#delimiter)
 4. [Заголовки](#Headings)
-5. [Блоки кода](#Code blocks)
-6. [Подсветка кода](#Code highlighting)
+5. [Блоки кода](#Code-blocks)
+6. [Подсветка кода](#Code-highlighting)
 7. [Цитаты](#Quotes)
 8. [Списки](#List)
 9. [Таблицы](#Tables)
 10. [Ссылки](#References)
-11. [Специальные символы](#Special symbols)
-12. [HTML внутри GFM и наоборот](#par12)
+11. [Специальные символы](#Special-symbols)
+12. [HTML внутри GFM и наоборот](#htmlinsidemd)
 13. [Изображение и видео](#Imagevideo)
 15. [Нововведение GFM](#Innovationgfm)
 14. [Больше информации](#Moreinfo)    
@@ -154,7 +154,7 @@ ___пример 4 результат___ **↷**
      
 
 ***
-5. <strong id="Code blocks">[ Блоки кода ]</strong>
+5. <strong id="Code-blocks">[ Блоки кода ]</strong>
 ***
 _(Заметка)  
 Отформатированные блоки кода используются в случае необходимости процитировать исходный код программ или разметки. Для создания блока кода в языке Markdown необходимо каждую строку параграфа начинать с отступа, состоящего из четырех пробелов или одного символа табуляции.    
@@ -185,7 +185,7 @@ ___пример 5.1 результат___ **↷**
      
 
 ***
-6. <strong id="Code highlighting">[ Подсветка кода ]</strong>
+6. <strong id="Code-highlighting">[ Подсветка кода ]</strong>
 ***
 _(Заметка)  
 Блоки кода в GitHub являются частью спецификации Markdown, но подсветка синтаксиса не является ее частью, поэтому рендеры, такие как Github и Markdown Here, поддерживают подсветку синтаксиса highlightJS. В зависимости от указанного языка в специально конструкции состоящей из трёх подряд обратных кавычек ` ```указать язык` синтаксис подсветки будет меняться, количество поддерживаемых языков исчисляется десятками с перечнем которых можно ознакомиться на [highlightjs.org](https://highlightjs.org/static/demo/)._  
@@ -1056,7 +1056,7 @@ ___пример 10.6 результат___ **↷**
      
 
 ***
-11. <strong id ="Special symbols">[ Специальные символы ]</strong>
+11. <strong id ="Special-symbols">[ Специальные символы ]</strong>
 ***
 _(Заметка)  
 В языке HTML существует несколько символов, требующих специального рассмотрения: это символы    
@@ -1102,19 +1102,58 @@ _(Заметка)
      
 
 ***
-12. **[ HTML внутри GFM и наоборот ]**
+12. <strong id="htmlinsidemd">[ HTML внутри GFM и наоборот ]</strong>
 ***
 _(Заметка)  
-Лекгий текст состоящий из текста и фраз._  
+MarkDown позволяет смешивать разметку с HTML, но не всю, например в созданных списках `ul` или `dl` синтаксис GFM не обрабатывается, а вот внутри синаксиса MD большинство тегов HTML работают стабильно._  
 
-### Использование HTML или смещивание HTML + MARKDOWN ###
+___пример 12___ **↷**
+
+	> Это цитата создана с помощью <a href="https://learn.getgrav.org/content/markdown">MD</a>    
+	в которой используеться простой html tag <em>смыслового курсива</em>
+
+___пример 12 результат___ **↷**
+
+> Это цитата создана с помощью <a href="https://learn.getgrav.org/content/markdown">MD</a>    
+в которой используеться простой html tag <em>смыслового курсива</em>
+
+___пример 12.1___ **↷**
+
+	<dl>
+	  <dt>Definition list</dt>
+	  <dd>Is `something` ~~people~~ use sometimes.</dd>
+
+	  <dt>Markdown in HTML</dt>
+	  <dd>Does *not* work **very** well. Use HTML <i>tags</i>.</dd>
+	</dl>
+
+___пример 12.1 результат___ **↷**
+
 <dl>
   <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
+  <dd>Is `something` ~~people~~ use sometimes.</dd>
 
   <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>    
+  <dd>Does *not* work **very** well. Use HTML <i>tags</i>.</dd>
+</dl>
+
+___пример 12.2___ **↷**
+
+	Создем простой список    
+	<ul class="don't-work">
+	<li>Элемент списка 1 без мд</li>
+	<li>Тут будет ссылка в разметке МД [текст](http://belousovv.ru/markdown_syntax)</li>
+	<li>Тут будет курсивный и жирный текст выполненные с помощью `***` ***not work :(***</li>
+	</ul>
+
+___пример 12.2 результат___ **↷**
+
+Создем простой список    
+<ul class="don't-work">
+<li>Элемент списка 1 без мд</li>
+<li>Тут будет ссылка в разметке МД [текст](http://belousovv.ru/markdown_syntax)</li>
+<li>Тут будет курсивный и жирный текст выполненные с помощью `***` ***not work :(***</li>
+</ul>    
 
      
      
@@ -1124,7 +1163,7 @@ _(Заметка)
 13. <strong id="Imagevideo">[ Изображения и видео ]</strong>
 ***
 _(Заметка)  
-Конструкция создания в GFM изображений очень похоже на создание ссылок пункт №10 c той лишь разнице, что перед открывающей квадратной скобкой добавляется !восклицательный знак и выглядит это так    
+Конструкция создания в GFM изображений очень похоже на создание [Ссылок](#References) c той лишь разнице, что перед открывающей квадратной скобкой добавляется !восклицательный знак и выглядит это так    
 `![alt](http://css-live.ru/ "Опциональный title")` то же самое относиться к изображением типа "сноски", самое обидное, что с помощью синтаксиса MD или GFM не удется задать размеры picture (width_height), изображения добавляется в изначальном размере, по этому за этим нужно следить и пользоваться старым добрый HTML вида `<img src="www" width="x" height="x">`, что касается видео напрямую его добавить тоже не удаться, но есть обходные пути в примерах ниже._    
 
 ___пример 13___ **↷**
@@ -1193,30 +1232,36 @@ ___пример 13.4 результат___ **↷**
 
 
 _(Заметка)    
-Напрямую добавить видео тегами `<iframe>`, `<object>`, `embed`... из-за соображений безопасности невозможно, нужно идти по другому пути, добавив заглушку в виде статического изображения или даже динамического gif,apng предварительно обернув их ссылкой, у роликов youtube по умолчанию создается preview из нескольких изображений, доступны они по ссылке такого вида `http://img.youtube.com/vi/ТВОЙ_ID_РОЛИКА/0.jpg` цифра на конце позволяет выбрать из нескольких вариантов или воспользоваться HTML разметкой вида    
-`<a href=""><img src=""></a>`, секунда рекламного альтруизма, есть удобное бесплатное десктопное приложение http://www.screentogif.com/ позволяющее записать видео рабочего стола и в момент превращать его в легковесный .gif_    
+Напрямую добавить видео тегами `<iframe>`, `<object>`, `embed`... из-за соображений безопасности невозможно, нужно идти по другому пути, добавив заглушку в виде статического изображения или даже динамического gif,apng предварительно обернув их ссылкой, у роликов youtube по умолчанию создается preview из нескольких изображений, доступны они по ссылке такого вида `http://img.youtube.com/vi/ТВОЙ_ID_РОЛИКА/0.jpg` цифра на конце позволяет выбрать из нескольких вариантов или воспользоваться HTML разметкой вида `<a href=""><img src=""></a>`    
+секундочка рекламного альтруизма, есть удобное бесплатное десктопное приложение http://www.screentogif.com/ позволяющее записать видео рабочего стола и в момент превращать его в легковесный .gif_    
 
 ___пример 13.5___ **↷**
 
-	Подменяем видео, изображением с ссылкой на первое, конструкция состоит из объединения `![img]() + [link]()`    
+	Подменяем видео материал изображением, указывая ссылку на видео и изображение    
+	конструкция состоит из объединения `![linkIMG]() + [linkVIDEO]()`    
 	[![IMG ALT](http://img.youtube.com/vi/SfSYrebXLDE/0.jpg)](http://www.youtube.com/watch?v=SfSYrebXLDE)  
 
 ___пример 13.5 результат___ **↷**
 
-Подменяем видео, изображением с ссылкой на первое, конструкция состоит из объединения `![img]() + [link]()`    
+Подменяем видео материал изображением, указывая ссылку на видео и изображение    
+конструкция состоит из объединения `![linkIMG]() + [linkVIDEO]()`    
 [![IMG ALT](http://img.youtube.com/vi/SfSYrebXLDE/0.jpg)](http://www.youtube.com/watch?v=SfSYrebXLDE)  
 
 ___пример 13.6___ **↷**
 
+	Фрагмент видео с изменяемыми размерами встраивания с помощью HTML    
+	
 	<a href="http://www.youtube.com/watch?v=SfSYrebXLDE">
 	<img src="http://img.youtube.com/vi/SfSYrebXLDE/sddefault.jpg" 
 	alt="accessibility" width="550" height="100"/></a>
 
 ___пример 13.6 результат___ **↷**
 
+Фрагмент видео с изменяемыми размерами встраивания с помощью HTML    
+
 <a href="http://www.youtube.com/watch?v=SfSYrebXLDE">
 <img src="http://img.youtube.com/vi/SfSYrebXLDE/sddefault.jpg" 
-alt="accessibility" width="550" height="100"/></a>    
+alt="accessibility" width="550" height="100"/></a>   
 
      
      
@@ -1231,6 +1276,7 @@ _(Заметка)
 ___пример 14___ **↷**
 
 #1
+nothing#1
 github-flavored-markdown#1
 defunkt/github-flavored-markdown#1
 
@@ -1290,16 +1336,22 @@ Work
      
 
 ***
-<strong id="Moreinfo"></strong>
-### refer block ###
+<strong id="Moreinfo">Sources of information</strong>
 
-1. Embed a YouTube video https://stackoverflow.com/questions/11804820/embed-a-youtube-video
-2. How to embed a video into GitHub README.md https://stackoverflow.com/questions/11804820/embed-a-youtube-video
-3. Краткое руководство http://paulradzkov.com/2014/markdown_cheatsheet/
-4. MarkDown Here https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet
-5. Markdown doc https://github.com/OlgaVlasova/markdown-doc
-6. Github шпаргалка https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
+1. Embed a YouTube video [stackoverflow-quest](stackq1)
+2. How to embed a video [stackoverflow-quest](stackq2)
+3. Краткое руководство [here](ru1)
+4. MarkDown Here [here](usa1)
+5. Markdown doc [here](ru2)
+6. Github шпаргалка [here](usa2)    
 
 
+
+[]: https://stackoverflow.com/questions/11804820/embed-a-youtube-video
+[]: https://stackoverflow.com/questions/4279611/how-to-embed-a-video-into-github-readme-md
+[]: http://paulradzkov.com/2014/markdown_cheatsheet
+[]: https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet
+[]: https://github.com/OlgaVlasova/markdown-doc
+[]: https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
 
 
