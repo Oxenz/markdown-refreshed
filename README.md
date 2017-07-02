@@ -4,8 +4,10 @@ Markdown не является заменой HTML. Синтаксис Markdown 
 
 
 # Расмотртим основные конструкции с примерами.
-### Разделим основные конструкции логически на _частые_ и _редкие_  
-#                                     ↓   Частые   ↓
+<a href="#block" id="block">Блок первый</a>    
+
+<a href='#installation-guide' id='installation-guide' class='anchor' aria-hidden='true'>Installation guide</a>
+
  
  
 ***
@@ -295,7 +297,7 @@ public abstract class L2Char extends L2Object {
   }
 }
 ```
-
+[Уникалка](#block)
 
 ***
 7. **[ Цитаты ]**
@@ -1158,15 +1160,97 @@ ___пример 13.5 результат___ **↷**
 
 ___пример 13.6___ **↷**
 
-	<a href="http://www.youtube.com/watch?v=SfSYrebXLDE" target="_blank">
+	<a href="http://www.youtube.com/watch?v=SfSYrebXLDE">
 	<img src="http://img.youtube.com/vi/SfSYrebXLDE/sddefault.jpg" 
 	alt="accessibility" width="550" height="100"/></a>
 
 ___пример 13.6 результат___ **↷**
 
-<a href="http://www.youtube.com/watch?v=SfSYrebXLDE" target="_blank">
+<a href="http://www.youtube.com/watch?v=SfSYrebXLDE">
 <img src="http://img.youtube.com/vi/SfSYrebXLDE/sddefault.jpg" 
 alt="accessibility" width="550" height="100"/></a>
+
+
+
+***
+14. **[ Прочее из GFM ]**
+***
+_(Заметка)  
+Ввод символа @, в комбинпции с именем пользователя, уведомит этого человека, чтобы он пришел и просмотрел комментарий, c помощью Любое число, относящееся к запросу или запросу Pull, будет автоматически преобразовано в ссылку, ну и куда без "незаменимых" EMOJI список которых можно посмотреть на www.emoji-cheat-sheet.com для добавления, имя EMOJI заключают с обеих сторон знаком :двоеточие: `:shit:` последней рассмотренной фишкой станет эмулация "task lists"  ._  
+
+___пример 14___ **↷**
+
+#1
+github-flavored-markdown#1
+defunkt/github-flavored-markdown#1
+
+___пример 14 результат___ **↷**
+
+#1
+github-flavored-markdown#1
+defunkt/github-flavored-markdown#1
+
+
+
+
+###########################3
+
+___пример 14.1___ **↷**
+
+	:fire: :neckbeard: :trollface: :octocat: :e-mail: :date: :gem: :checkered_flag: :ru: :new: :tm:
+
+___пример 14.1 результат______ **↷**
+
+:fire: :neckbeard: :trollface: :octocat: :e-mail: :date: :gem: :checkered_flag: :ru: :new: :tm:
+
+___пример 14.2___ **↷**
+
+	**Don't Work**
+	- [х] error, использована русская хЭ    
+	-[x] error, not space 1
+	- [x]error, not space 2
+	- [] error, not space 3 
+
+
+	Work
+	- [X] use uppercase X 
+	- [x] this is a complete item
+	- [ ] this is an incomplete item
+	- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> or ~~tilda~~ supported
+	- [x] list syntax required (any unordered or ordered list supported)
+
+___пример 14.2 результат______ **↷**
+
+**Don't Work**
+- [х] error, использована русская хЭ    
+-[x] error, not space 1
+- [x]error, not space 2
+- [] error, not space 3 
+  
+
+Work
+- [X] use uppercase X 
+- [x] this is a complete item
+- [ ] this is an incomplete item
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> or ~~tilda~~ supported
+- [x] list syntax required (any unordered or ordered list supported)
+
+___пример 14___ **↷**    
+
+
+
+
+
+
+
+### refer block ###
+
+1. Embed a YouTube video https://stackoverflow.com/questions/11804820/embed-a-youtube-video
+2. How to embed a video into GitHub README.md https://stackoverflow.com/questions/11804820/embed-a-youtube-video
+3. Краткое руководство http://paulradzkov.com/2014/markdown_cheatsheet/
+4. MarkDown Here https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet
+5. Markdown doc https://github.com/OlgaVlasova/markdown-doc
+6. Github шпаргалка https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
 
 
 
